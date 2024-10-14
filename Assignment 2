@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empolyee Reg Form</title>
+</head>
+<body>
+    <h1>Sign up</h1>
+    <form>
+        <label for="First name">First name:</label>
+        <input type="text">
+        <label for="Last name">Last name:</label>
+        <input type="text">
+        <br> <br>
+
+        <div>
+        <label for="Email">Email:</label>
+        <input type="email" style="width: 36.3%;">
+        </div>
+        <br>
+        <input type="radio">
+        <label for="Male">Male</label>
+        <input type="radio">
+        <label for="Female">Female</label>
+        <br> <br>
+        <label for="City">City:</label>
+        <input type="text">
+        <label for="Country">Country:</label>
+        <select>
+            <option value="United states">United states</option>
+            <option value="China">China</option>
+            <option value="India">India</option>
+            <option value="South Korea">South Korea</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+         </select>
+         <br> <br>
+         <label for="Create Password">Create Password:</label>
+         <input type="text">
+         <label for="Repeat Password">Repeat Password:</label>
+         <input type="text">
+         <br> <br>
+         <button style="background-color: blue; color: white; width: 47.5%;" type="Register">Register</button>
+         <br> <br>
+         <input type="checkbox">
+         <label for="Conditions">I am agree with
+            <a href="terms and conditions">terms and conditions</a>
+         </label>
+         <br> <br>
+         <label for="Have an account">Have an account?
+            <a href="log in">log in</a> 
+         </label>
+
+
+        
+    </form>
+
+</body>
+</html>
