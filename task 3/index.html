@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+<header>
+    <h1>Smart City Project</h1>
+</header>
+
+<!-- Navigation Section -->
+<nav>
+    <ul>
+        <li><a href="#login">Login</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#admin">Admin</a></li>
+    </ul>
+</nav>
+
+<!-- Cities Section -->
+<section id="cities">
+    <h2>List of Cities</h2>
+    <nav>
+        <ul>
+            <li><a href="#Chennai" onclick="selectCity('Chennai')">Chennai</a></li>
+            <li><a href="#Coimbatore" onclick="selectCity('Coimbatore')">Coimbatore</a></li>
+            <li><a href="#Madurai" onclick="selectCity('Madurai')">Madurai</a></li>
+            <li><a href="#Trichy" onclick="selectCity('Trichy')">Trichy</a></li>
+        </ul>
+    </nav>
+</section>
+
+<!-- Weather Section -->
+<section id="weather">
+    <h2>Current Weather</h2>
+    <div id="weatherReport">Select a city to see the weather.</div>
+</section>
+
+<!-- News Section -->
+<section id="news">
+    <h2>City News</h2>
+    <div id="newsContent">Select a city to see the news.</div>
+</section>
+
+<!-- Admin Section -->
+<section id="admin">
+    <h2>Admin Panel</h2>
+    <form id="adminForm" onsubmit="addCity(event)">
+        <input type="text" id="cityName" placeholder="City Name" required>
+        <input type="text" id="cityDetails" placeholder="City Details" required>
+        <button type="submit">Add City</button>
+    </form>
+    <div id="cityList">List of cities will be displayed here.</div>
+</section>
+
+<footer>
+    <p>&copy; 2023 Smart City Project</p>
+</footer> 
+<script>
+    // Function to handle city selection
+    function selectCity(city) {
+        const weatherReport = document.getElementById('weatherReport');
+        const newsContent = document.getElementById('newsContent');
+
+        // Example data for demonstration
+        const weatherData = {
+            "Chennai": "Sunny, 30°C",
+            "Coimbatore": "Cloudy, 28°C",
+            "Madurai": "Rainy, 25°C",
+            "Trichy": "Sunny, 32°C"
+        };
+
+        const newsData = {
+            "Chennai": "Chennai to host international film festival.",
+            "Coimbatore": "Coimbatore's tech park sees new investments.",
+            "Madurai": "Madurai's cultural festival attracts tourists.",
+            "Trichy": "Trichy airport to expand operations."
+        };
+
+        // Update weather and news based on selected city
+        weatherReport.innerHTML = weatherData[city] || 'Weather data not available.';
+        newsContent.innerHTML = newsData[city] || 'News data not available.';
+    }
+
+    // Function to handle adding a new city
+    function addCity(event) {
+        event.preventDefault();
+        const cityName = document.getElementById('cityName').value;
+        const cityDetails = document.getElementById('cityDetails').value;
+
+        const cityList = document.getElementById('cityList');
+        const newCityItem = document.createElement('div');
+        newCityItem.innerHTML = `<strong>${cityName}</strong>: ${cityDetails}`;
+        cityList.appendChild(newCityItem);
+
+        // Clear the input fields after adding
+        document.getElementById('cityName').value = '';
+        document.getElementById('cityDetails').value = '';
+    }
+</script>
+</body>
+</html>
